@@ -13,38 +13,247 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section class="hero">
+				<div class="container">
+					<div class="hero-content">
+						<div class="hero-text">
+							<h1 class="hero-title">
+								NICK<br />
+								CHIMICLES
+							</h1>
+							<div class="hero-meta">
+								<p class="mono">RESEARCHER & DEVELOPER</p>
+								<p class="mono">BUILDING @ ARKEON</p>
+								<p class="mono">NEW YORK</p>
+							</div>
+						</div>
+						<div class="hero-image">
+							<img src="/MassimilianoStampa.jpg" alt="Classical painting" class="fade-in" />
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="intro">
+				<div class="container">
+					<div class="grid grid-2">
+						<div>
+							<h2>COMPUTATIONAL<br />HISTORY</h2>
+						</div>
+						<div>
+							<p>
+								I work at the intersection of history, computer science, and archival technologies. 
+								My research combines rigorous historical scholarship with computational methods 
+								to uncover new insights about the past.
+							</p>
+							<p>
+								Currently building AI-powered tools that democratize access to historical knowledge.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<hr class="divider" />
+
+			<section class="projects-preview">
+				<div class="container">
+					<h3 class="section-title mono">RECENT WORK</h3>
+					<div class="project-grid">
+						<a href="/blog/history-lab" class="project-item">
+							<h4>HistoryLab AI</h4>
+							<p>Making declassified documents searchable through semantic AI, serving researchers at Columbia, Harvard, and beyond.</p>
+						</a>
+						<a href="/blog/thesis" class="project-item">
+							<h4>Precision Bombing Thesis</h4>
+							<p>Alan J. Willen Prize-winning research challenging 80 years of WWII strategic bombing narratives using computational analysis.</p>
+						</a>
+						<a href="/blog/alexander-db" class="project-item">
+							<h4>Alexander Database</h4>
+							<p>Empirical analysis of ancient sources using semantic embeddings to settle centuries-old historical debates.</p>
+						</a>
+						<a href="/blog/block-bard" class="project-item">
+							<h4>Block-Bard</h4>
+							<p>Blockchain-based collaborative storytelling platform where AI agents create coherent narratives through distributed consensus.</p>
+						</a>
+					</div>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.hero {
+		padding: var(--space-sm) 0 var(--space-2xl) 0;
+		min-height: 90vh;
+		display: flex;
+		align-items: center;
+	}
+
+	.hero-content {
+		display: grid;
+		grid-template-columns: 1fr 500px;
+		gap: calc(var(--space-2xl) * 2.5);
+		align-items: end;
+	}
+
+	.hero-text {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-md);
+		justify-self: start;
+		align-self: end;
+	}
+
+	.hero-title {
+		margin: 0;
+		line-height: 0.9;
+		font-size: clamp(2rem, 5vw, 3.5rem);
+	}
+
+	.hero-meta {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-sm);
+	}
+
+	.hero-meta p {
+		margin: 0;
+		font-size: 0.875rem;
+		color: var(--gray-400);
+		letter-spacing: 0.1em;
+	}
+
+	.hero-image {
+		position: relative;
+		height: 750px;
+		overflow: hidden;
+		border-radius: 2px;
+	}
+
+	.hero-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		object-position: center;
+	}
+
+	.fade-in {
+		opacity: 0;
+		animation: fadeIn 1.5s ease-out 0.5s forwards;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.intro {
+		padding: var(--space-2xl) 0;
+	}
+
+	.intro h2 {
+		margin: 0;
+		line-height: 1.1;
+	}
+
+	.intro p {
+		color: var(--gray-300);
+		line-height: 1.7;
+	}
+
+	.projects-preview {
+		padding: var(--space-2xl) 0;
+	}
+
+	.section-title {
+		font-size: 0.875rem;
+		color: var(--gray-400);
+		margin-bottom: var(--space-xl);
+		letter-spacing: 0.1em;
+	}
+
+	.project-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: var(--space-xl);
+	}
+
+	.project-item {
+		display: block;
+		padding: var(--space-lg);
+		border: 1px solid var(--gray-800);
+		text-decoration: none;
+		color: inherit;
+		transition: all 0.2s ease;
+	}
+
+	.project-item:hover {
+		border-color: var(--gray-600);
+		transform: translateY(-2px);
+	}
+
+	.project-item h4 {
+		margin: 0 0 var(--space-md) 0;
+		color: var(--white);
+		font-size: 1.125rem;
+	}
+
+	.project-item p {
+		margin: 0;
+		color: var(--gray-400);
+		line-height: 1.6;
+		font-size: 0.875rem;
+	}
+
+	@media (max-width: 1024px) {
+		.hero-content {
+			grid-template-columns: 1fr 400px;
+			gap: calc(var(--space-2xl) * 2);
+		}
+
+		.hero-image {
+			height: 650px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero-content {
+			grid-template-columns: 1fr;
+			gap: var(--space-xl);
+		}
+
+		.hero-image {
+			height: 500px;
+			order: -1;
+		}
+
+		.project-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero {
+			min-height: 70vh;
+		}
+
+		.hero-image {
+			height: 300px;
+		}
+
+		.hero-meta {
+			flex-direction: row;
+			gap: var(--space-lg);
+			flex-wrap: wrap;
+		}
+	}
+</style>
