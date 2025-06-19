@@ -87,7 +87,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <style>
 	.hero {
 		padding: var(--space-sm) 0 var(--space-2xl) 0;
-		min-height: 90vh;
+		height: 90vh;
+		max-height: 900px;
+		min-height: 600px;
 		display: flex;
 		align-items: center;
 	}
@@ -128,7 +130,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 	.hero-image {
 		position: relative;
-		height: 750px;
+		height: min(75vh, 750px);
+		max-height: 750px;
 		overflow: hidden;
 		border-radius: 2px;
 	}
@@ -221,7 +224,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 		.hero-image {
-			height: 650px;
+			height: min(65vh, 650px);
+			max-height: 650px;
 		}
 	}
 
@@ -232,7 +236,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 		.hero-image {
-			height: 500px;
+			height: min(55vh, 500px);
+			max-height: 500px;
 			order: -1;
 		}
 
@@ -243,11 +248,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 	@media (max-width: 480px) {
 		.hero {
-			min-height: 70vh;
+			height: 80vh;
+			min-height: 500px;
 		}
 
 		.hero-image {
-			height: 300px;
+			height: min(45vh, 300px);
+			max-height: 300px;
 		}
 
 		.hero-meta {
